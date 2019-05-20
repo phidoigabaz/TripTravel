@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class HomeViewModel {
     
-    func parseCountryLocal() {
+    func parseCountryLocal(completion: @escaping(([CountryModel]) -> Void)) {
         if let filePath = Bundle.main.path(forResource: "country", ofType: "json"),
             let data = FileManager.default.contents(atPath: filePath)  {
             do {

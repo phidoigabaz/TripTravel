@@ -10,8 +10,15 @@ import UIKit
 
 class HomeItemCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var thumbaiImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func bindingWithData() {
+        
     }
 }
