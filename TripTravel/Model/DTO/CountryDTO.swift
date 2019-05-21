@@ -11,8 +11,13 @@ import SwiftyJSON
 
 class CountryDTO: NSObject {
     var name: String
+    var image: String
+    var country: String
     
     init(_ json: JSON) {
         name = json["name"].stringValue
+        image = json["image"].stringValue
+        country = json["country"].stringValue
+        
     }
 }

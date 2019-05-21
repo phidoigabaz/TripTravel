@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TripTravel" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="R8I-e3-6u4" id="HWQ-bv-MEf"/>
+                <outlet property="collectionView" destination="R8I-e3-6u4" id="YWE-ac-Dga"/>
                 <outlet property="searchImageView" destination="zv0-Uk-p8E" id="gtu-sp-s8R"/>
                 <outlet property="searchView" destination="ZKq-S2-Zcm" id="bzS-lq-b2M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKq-S2-Zcm">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKq-S2-Zcm" customClass="CustomView" customModule="TripTravel" customModuleProvider="target">
                     <rect key="frame" x="20" y="30" width="335" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-Uk-p8E">
@@ -51,30 +51,44 @@
                         <constraint firstItem="nm7-hh-Y1y" firstAttribute="leading" secondItem="zv0-Uk-p8E" secondAttribute="trailing" constant="20" id="jBV-Fm-Dgc"/>
                         <constraint firstItem="zv0-Uk-p8E" firstAttribute="leading" secondItem="ZKq-S2-Zcm" secondAttribute="leading" constant="20" id="pYU-qF-hG0"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="2" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOU-6z-cJf">
-                    <rect key="frame" x="20" y="100" width="103" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOU-6z-cJf">
+                    <rect key="frame" x="20" y="100" width="127.5" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-e3-6u4">
-                    <rect key="frame" x="20" y="150" width="335" height="497"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JaG-zI-Rbe">
+                    <rect key="frame" x="10" y="150" width="355" height="497"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="JaG-zI-Rbe">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="R8I-e3-6u4" firstAttribute="top" secondItem="sOU-6z-cJf" secondAttribute="bottom" constant="20" id="3XZ-04-BIC"/>
-                <constraint firstItem="R8I-e3-6u4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4BH-zB-Smw"/>
+                <constraint firstItem="R8I-e3-6u4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="4BH-zB-Smw"/>
                 <constraint firstItem="sOU-6z-cJf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="G51-GE-dY5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R8I-e3-6u4" secondAttribute="trailing" constant="20" id="NP8-7d-hQ8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R8I-e3-6u4" secondAttribute="trailing" constant="10" id="NP8-7d-hQ8"/>
                 <constraint firstItem="sOU-6z-cJf" firstAttribute="top" secondItem="ZKq-S2-Zcm" secondAttribute="bottom" constant="30" id="g6W-Vu-rOF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R8I-e3-6u4" secondAttribute="bottom" constant="20" id="l7c-HG-xW3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZKq-S2-Zcm" secondAttribute="trailing" constant="20" id="nND-ia-SKB"/>

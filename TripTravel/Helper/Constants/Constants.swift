@@ -14,6 +14,8 @@ struct Constants {
     static let MAPBOX_ACESS_TOKEN = "pk.eyJ1IjoicGhpZG9pZ2FiYXoiLCJhIjoiY2p1ZGhmbXo0MGVseDRlcjF3bG1ndWZ3OCJ9.HYgvGCXqshnQKi4lW8xfkQ"
     static let GOOGLE_API_KEY = "AIzaSyCbdYK-IsNVJDQe3Kas26khHfD3XwUOic4" //"AIzaSyDjXiVrVqyOvpiQRG1xz1i3NqLEPz774wY"
     static let ZOMATO_KEY = "540878dfe9e6b63318d59bf46ed261fd"
+    static let API_TOKEN = "dmytkghm7jmfkxdun2olp2umqeyjvgrv"
+    static let ACCOUNT_ID = "LUHN0K0F"
     
     static let latDefault = ""
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate

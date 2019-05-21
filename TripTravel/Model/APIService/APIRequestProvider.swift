@@ -12,8 +12,8 @@ import Alamofire
 let kClientVersionHeaderField = "os_version_code"
 let kClientOSHeaderField = "os_type"
 
-let baseURL = "https://developers.zomato.com/api" //zomato URL
-let apiVersion = "/v2.1"
+let baseURL = "https://www.triposo.com" //tripiso URL
+let apiVersion = "/api/20181213"
 
 /*
  *  APIRequestProvider takes responsible for build and provide request for service objects
@@ -38,7 +38,8 @@ class APIRequestProvider: NSObject {
                 "Authorization": "",
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded",
-                "user-key": Constants.ZOMATO_KEY,
+                "X-Triposo-Account": Constants.ACCOUNT_ID,
+                "X-Triposo-Token": Constants.API_TOKEN,
                 ]
             return headers
         }
@@ -64,11 +65,11 @@ class APIRequestProvider: NSObject {
     }
 
     func commonParam() -> [String: String] {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let deviceOS = "ios"
-        var param = [String: String]()
-        param[kClientVersionHeaderField] = version
-        param[kClientOSHeaderField] = deviceOS
+        _ = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        _ = "ios"
+        let param = [String: String]()
+        //param[kClientVersionHeaderField] = version
+        //param[kClientOSHeaderField] = deviceOS
         return param
     }
 
@@ -94,32 +95,14 @@ class APIRequestProvider: NSObject {
         alamoFireManager = Alamofire.SessionManager(configuration: configuration)
     }
     
-    func getCategories() -> DataRequest {
-        let urlString = requestURL.appending("categories")
+    func placeCountry(part_of: String, tag_labels: String) -> DataRequest {
+        let urlString = requestURL.appending("location.json")
+        var param = commonParam()
+        param["part_of"] = part_of
+        param["tag_labels"] = tag_labels
+        param["fields"] = "all"
         return alamoFireManager.request(urlString,
                                         method: .get,
-                                        parameters: nil,
-                                        encoding: URLEncoding.queryString,
-                                        headers: headers)
-    }
-    
-    func getCollections(id: Int) -> DataRequest {
-        let urlString = requestURL.appending("collections")
-        var param = commonParam()
-        param["city_id"] = String(id)
-        return alamoFireManager.request(urlString,
-                                        method: .get,
-                                        parameters: param,
-                                        encoding: URLEncoding.queryString,
-                                        headers: headers)
-    }
-    
-    func searchRestaurantLocation(lat: Double, lon: Double) -> DataRequest {
-        let urlString = requestURL.appending("search")
-        var param = commonParam()
-        param["lat"] = String("\(lat)")
-        param["lon"] = String("\(lon)")
-        return alamoFireManager.request(urlString, method: .get,
                                         parameters: param,
                                         encoding: URLEncoding.queryString,
                                         headers: headers)

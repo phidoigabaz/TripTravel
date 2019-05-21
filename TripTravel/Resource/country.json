@@ -1,42 +1,47 @@
 [
     {
         "name": "Hà Nội",
-        "image": ""
+        "image": "Hanoi",
+        "country": "Việt Nam"
     },
     {
         "name": "London",
-        "image": ""
+        "image": "london",
+        "country": "Anh"
     },
     {
         "name": "Paris",
-        "image": ""
+        "image": "paris",
+        "country": "Pháp"
     },
     {
         "name": "Rome",
-        "image": ""
+        "image": "rome",
+        "country": "Italy"
     },
     {
         "name": "Dubai",
-        "image": ""
+        "image": "dubai",
+        "country": "Ả Rập"
     },
     {
         "name": "Istabul",
-        "image": ""
+        "image": "istabul",
+        "country": "Thổ Nhĩ Kỳ"
     },
     {
         "name": "NewYork City",
-        "image": ""
+        "image": "newyork",
+        "country": "Mỹ"
     },
     {
         "name": "Amsterdam",
-        "image": ""
+        "image": "amsterdam",
+        "country": "Hà Lan"
     },
     {
-        "name": "Berlin",
-        "image": ""
-    },
-    {
-        "name": "Northen VietNam",
-        "image": ""
-    },
+        "name": "Bangkok",
+        "image": "bangkok",
+        "country": "Thái Lan"
+    }
 ]

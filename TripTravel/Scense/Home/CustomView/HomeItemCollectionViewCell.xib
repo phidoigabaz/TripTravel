@@ -19,21 +19,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="191" height="197"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tR0-On-Jw9">
-                        <rect key="frame" x="0.0" y="0.0" width="191" height="197"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="tR0-On-Jw9" customClass="UIImageViewExtension" customModule="TripTravel" customModuleProvider="target">
+                        <rect key="frame" x="10" y="0.0" width="171" height="197"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="1.5" height="1.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMz-Jk-6qx">
-                        <rect key="frame" x="69.5" y="86.5" width="52" height="24"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <rect key="frame" x="42.5" y="71" width="106" height="55"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="40"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="tR0-On-Jw9" secondAttribute="trailing" id="1Ay-Yp-cVr"/>
+                <constraint firstAttribute="trailing" secondItem="tR0-On-Jw9" secondAttribute="trailing" constant="10" id="1Ay-Yp-cVr"/>
                 <constraint firstItem="cMz-Jk-6qx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4Dc-aB-xft"/>
-                <constraint firstItem="tR0-On-Jw9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6UL-Ks-xYq"/>
+                <constraint firstItem="tR0-On-Jw9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="6UL-Ks-xYq"/>
                 <constraint firstAttribute="bottom" secondItem="tR0-On-Jw9" secondAttribute="bottom" id="Bsc-Km-V5d"/>
                 <constraint firstItem="tR0-On-Jw9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OSw-A2-z4Q"/>
                 <constraint firstItem="cMz-Jk-6qx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kJg-if-DCG"/>

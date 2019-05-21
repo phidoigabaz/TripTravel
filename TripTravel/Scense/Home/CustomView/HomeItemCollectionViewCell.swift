@@ -16,9 +16,15 @@ class HomeItemCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        thumbaiImageView.setRadiusView(10)
+        dropShadowView()
     }
     
-    func bindingWithData() {
-        
+    func bindingWithData(_ model: CountryModel) {
+        nameLabel.text = model.country
+        thumbaiImageView.image = UIImage(named: model.image)
     }
+    
+    //addShadow
+    
 }

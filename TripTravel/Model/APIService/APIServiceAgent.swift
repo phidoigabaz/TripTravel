@@ -36,13 +36,12 @@ class APIServiceAgent: NSObject {
                 switch response.result {
                 case .success:
                     let json            = JSON(response.result.value!)
-                    let status          = json["results"].stringValue
+                    let status          = json["results"].arrayValue
                     _         = json["message"].stringValue
                     let responseCode    = json["code"].intValue
                     let error = json["error"].stringValue
-                    
-                    if responseCode == APIErrorCode.success.rawValue {
-                        completion(json, nil)
+                    if !status.isEmpty {
+                        completion(json["results"], nil)
                     } else {
                         //let error = NSError.init()
                         let err = NSError.errorWith(code: responseCode, message: error)
